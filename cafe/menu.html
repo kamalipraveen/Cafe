@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Kamali’s Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Kamali’s Café ☕</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Menu 🍽️</h2>
+    <ul>
+      <li>Espresso - ₹100</li>
+      <li>Cappuccino - ₹120</li>
+      <li>Latte - ₹130</li>
+      <li>Mocha - ₹140</li>
+    </ul>
+  </main>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("username");
+    }
+  </script>
+
+</body>
+</html>

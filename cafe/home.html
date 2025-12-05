@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Kamali’s Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Welcome, <span id="user"></span> 👋</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>This is your Home Page 🌼</h2>
+    <p>Explore our menu and contact us for more!</p>
+  </main>
+
+  <script>
+    const user = localStorage.getItem("username");
+    if (!user) {
+      window.location.href = "index.html"; // redirect if not logged in
+    } else {
+      document.getElementById("user").textContent = user;
+    }
+
+    function logout() {
+      localStorage.removeItem("username");
+    }
+  </script>
+
+</body>
+</html>

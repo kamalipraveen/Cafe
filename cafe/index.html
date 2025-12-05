@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Kamali’s Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to Kamali’s Website 🌸</h1>
+    <h3>Login to Continue</h3>
+
+    <form onsubmit="return loginUser(event)">
+      <input type="text" id="username" placeholder="Enter your name" required><br>
+      <input type="tel" id="mobile" placeholder="Enter mobile number" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function loginUser(event) {
+      event.preventDefault(); // prevent form refresh
+
+      const username = document.getElementById("username").value;
+      const mobile = document.getElementById("mobile").value;
+
+      // Simple validation
+      if (username && mobile.length === 10) {
+        // Save name for next page
+        localStorage.setItem("username", username);
+        window.location.href = "home.html";
+      } else {
+        alert("Please enter valid details (10-digit mobile number).");
+      }
+    }
+  </script>
+
+</body>
+</html>
